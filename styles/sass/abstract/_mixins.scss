@@ -1,0 +1,8 @@
+@mixin buttons_props($height_val){
+    text-decoration: none;
+    width: 95px;
+    height: $height_val;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 

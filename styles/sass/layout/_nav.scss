@@ -1,0 +1,45 @@
+nav{
+
+    .nav_logo {
+        @include buttons_props(75px);
+        background-color: #081c24;
+        img {
+            width: 45px;
+            height: 40px;
+            transition: transform .5s ease;
+
+            &:hover{
+                transform: scale(1.04);
+            }
+        }
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        .nav_items {
+            width: 100%;
+            border-bottom: 1px solid #f8f8f8;
+
+            .nav_buttons{
+                @include buttons_props(95px);
+                
+                .nav_link_wrap{
+                    display: flex; //hacer mixin de flex
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    color: rgba(8,28,36,.7);
+                    
+                    span{
+                        font-size: 9px;
+                        text-transform: uppercase;
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
