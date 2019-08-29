@@ -22,6 +22,8 @@ const printMovies = (wraper, arr) => {
     const category_container = document.getElementById(wraper)
     category_container.innerHTML = '';
 
+    ccreateCategoryHeader(category_container, wraper)
+
     const movies_container = document.createElement('ul')
     movies_container.classList.add('movies_container');
 
@@ -29,6 +31,44 @@ const printMovies = (wraper, arr) => {
 
     category_container.appendChild(movies_container)
 }
+
+
+const createCategoryHeader = (container, category) => {
+    const header = document.createElement('header')
+    header.classList.add('movies_header')
+
+    const header_title = document.createElement('p')
+    header_title.classList.add('movies_header_title')
+    header_title.innerText = getCategoryTitle(category)
+
+    header.appendChild(header_title)
+    container.appendChild(header)
+}
+
+const getCategoryTitle = category => {
+    let title = '';
+
+    switch (category) {
+        case 'popular_wraper':
+            title = 'Popular Movies'
+            break;
+
+        case 'toprated_wraper':
+            title = 'Top Rated Movies'
+            break;
+
+        case 'upcoming_wraper':
+            title = 'Upcoming Movies'
+            break;
+
+        default:
+            title = 'Now Playing Movies'
+            break;
+    }
+
+    return title
+}
+
 
 const createMovieBox = (container, movie) => {
     const {id, poster_path, title} = movie;
@@ -54,5 +94,3 @@ const createMovieBox = (container, movie) => {
     li.appendChild(a)
     container.appendChild(li)
 }
-
-
