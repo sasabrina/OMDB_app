@@ -20,24 +20,28 @@ const fillModal = movie => {
 }
 
 const getImages = (backdrop, poster) => {
+    const figure = document.getElementById('modal_img')
+    figure.innerHTML = "";
+    
     const header = document.getElementById('modal_header')
     header.style.backgroundImage =  `url('https://image.tmdb.org/t/p/w600/${backdrop}')`
 
     const img = document.createElement('img')
     poster.src = `https://image.tmdb.org/t/p/w500/${poster}`
 
-    const figure = document.getElementById('modal_img')
     figure.appendChild(img)
 }
 
 const createTitles = (title, tagline) => {
+    const titles = document.getElementById('modal_titles')
+    titles.innerHTML = "";
+
     const h1 = document.createElement('h1')
     h1.innerText = `${title}`
 
     const p = document.createElement('p')
     p.innerText = `${tagline}`
 
-    const titles = document.getElementById('modal_titles')
     titles.appendChild(h1)
     titles.appendChild(p)
 }
