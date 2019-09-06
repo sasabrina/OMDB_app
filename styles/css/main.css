@@ -446,6 +446,10 @@ template {
   display: none;
 }
 
+.hidden {
+  display: none;
+}
+
 .container {
   display: flex;
   justify-content: space-between;

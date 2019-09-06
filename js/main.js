@@ -1,4 +1,3 @@
-const api_key = 'e3087953b023a4a056fc42d81ebd595d';
 
 const categoryFetch = (container, category) => {
     return fetch(`https://api.themoviedb.org/3/movie/${category}?api_key=${api_key}`)
@@ -22,7 +21,7 @@ const printMovies = (wraper, arr) => {
     const category_container = document.getElementById(wraper)
     category_container.innerHTML = '';
 
-    ccreateCategoryHeader(category_container, wraper)
+    createCategoryHeader(category_container, wraper)
 
     const movies_container = document.createElement('ul')
     movies_container.classList.add('movies_container');
@@ -78,7 +77,7 @@ const createMovieBox = (container, movie) => {
 
     const a = document.createElement('a')
     a.href = '#'
-    a.onclick = () => modalFnc;
+    a.onclick = () => toggleModal(id);
 
     const img = document.createElement('img')
     img.src = `https://image.tmdb.org/t/p/w500/${poster_path}`
