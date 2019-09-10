@@ -26,6 +26,8 @@ html {
 
 body {
   margin: 0;
+  position: relative;
+
 }
 
 /**
@@ -464,4 +466,9 @@ template {
 }
 .hidden{
   display: none;
+}
+
+.no_scroll{
+  height: 100%; 
+  overflow: hidden
 }

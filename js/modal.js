@@ -10,6 +10,9 @@ const toggleModal = id => {
     const mdl = document.getElementById('modal')
     mdl.classList.toggle('hidden')
     movieFetch(id)
+
+    const body = document.body
+    body.classList.toggle('no_scroll')
 }
 
 const fillModal = movie => {
@@ -20,16 +23,12 @@ const fillModal = movie => {
 }
 
 const getImages = (backdrop, poster) => {
-    const figure = document.getElementById('modal_img')
-    figure.innerHTML = "";
     
-    const header = document.getElementById('modal_header')
-    header.style.backgroundImage =  `url('https://image.tmdb.org/t/p/w600/${backdrop}')`
-
-    const img = document.createElement('img')
-    poster.src = `https://image.tmdb.org/t/p/w500/${poster}`
-
-    figure.appendChild(img)
+    const header = document.getElementById('modal_header_wraper')
+    header.style.backgroundImage =  `url('https://image.tmdb.org/t/p/w500/${backdrop}')`
+    
+    const figure = document.getElementById('modal_img')
+    figure.innerHTML = `<img src = "https://image.tmdb.org/t/p/w500/${poster}">`
 }
 
 const createTitles = (title, tagline) => {

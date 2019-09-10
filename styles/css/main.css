@@ -25,6 +25,7 @@ html {
    */
 body {
   margin: 0;
+  position: relative;
 }
 
 /**
@@ -450,6 +451,11 @@ template {
   display: none;
 }
 
+.no_scroll {
+  height: 100%;
+  overflow: hidden;
+}
+
 .container {
   display: flex;
   justify-content: space-between;
@@ -583,6 +589,61 @@ header .banner .title_wrap h1 {
   letter-spacing: 0.5px;
   color: #081c24;
   margin: 0;
+}
+
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(8, 28, 36, 0.85);
+}
+#modal #modal_header {
+  width: 80%;
+  margin: 40px auto;
+}
+#modal #modal_header #modal_header_wraper {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  width: 100%;
+  height: 350px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+#modal #modal_header #modal_header_wraper:before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(8, 28, 36, 0.85);
+}
+#modal #modal_header #modal_header_wraper #modal_img {
+  position: absolute;
+  width: calc(45% - 40px);
+  top: 40px;
+  left: 40px;
+  margin: 0;
+}
+#modal #modal_header #modal_header_wraper #modal_img img {
+  width: 100%;
+}
+#modal #modal_header #modal_header_wraper #modal_titles {
+  position: relative;
+  width: 55%;
+  text-align: left;
+  margin-left: 45%;
+  padding: 30px 30px 30px 40px;
+}
+#modal h1 {
+  color: #bc3b69;
+}
+#modal p {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /*# sourceMappingURL=main.css.map */
