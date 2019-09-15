@@ -6,11 +6,15 @@ const movieFetch = movieId => {
     .then(response => fillModal(response))
 }
 
-const toggleModal = id => {
+const toggleMovie = id => {
+    toggleModal()
+    movieFetch(id)
+}
+
+const toggleModal = () => {
     const mdl = document.getElementById('modal')
     mdl.classList.toggle('hidden')
-    movieFetch(id)
-
+    
     const body = document.body
     body.classList.toggle('no_scroll')
 }
@@ -20,6 +24,7 @@ const fillModal = movie => {
 
     getImages(backdrop_path, poster_path)
     createTitles(title, tagline)
+    getData(overview, genres, release_date)
 }
 
 const getImages = (backdrop, poster) => {
@@ -35,12 +40,18 @@ const createTitles = (title, tagline) => {
     const titles = document.getElementById('modal_titles')
     titles.innerHTML = "";
 
-    const h1 = document.createElement('h1')
-    h1.innerText = `${title}`
+    titles.innerHTML = `<h1>${title}</h1>
+    <p>${tagline}</p>`
+}
 
-    const p = document.createElement('p')
-    p.innerText = `${tagline}`
+const getData = (overview, genres, date) => {
+    const container = document.getElementById('modal_data')
+    container.innerHTML = "";
 
-    titles.appendChild(h1)
-    titles.appendChild(p)
+    let genersToPrint = genres.map(({name}) => name).join(', ')
+    container.innerHTML = `<p>${overview}</p>
+    <h2>Genres</h2>
+    <p>${genersToPrint}</p>
+    <h2>Release Date</h2>
+    <p>${date}</p>`
 }

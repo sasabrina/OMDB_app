@@ -77,7 +77,7 @@ const createMovieBox = (container, movie) => {
 
     const a = document.createElement('a')
     a.href = '#'
-    a.onclick = () => toggleModal(id);
+    a.onclick = () => toggleMovie(id);
 
     const img = document.createElement('img')
     img.src = `https://image.tmdb.org/t/p/w500/${poster_path}`

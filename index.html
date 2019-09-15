@@ -12,7 +12,7 @@
     <title>Document</title>
 </head>
 <body onload="initialize()">
-    <div class="container">
+    <div id="container">
         <aside>
             <nav>
                 <a href="/" class="nav_buttons nav_logo">
@@ -95,22 +95,27 @@
         </main>
     </div>
 
-    <section id="modal" class="hidden">
+    <section id="modal" class="hidden" onclick="toggleModal()">
+        <div class="modal_wrapper">
+            <header id="modal_header">
+                <a href="#" id="modal_btn">
+                    <i class="fas fa-minus"></i>
+                    <i class="fas fa-minus"></i>
+                </a>
+                <div id="modal_header_wraper">
+                    <figure id="modal_img"></figure>
+                    <div id="modal_titles">
+    
+                    </div>
+                </div>
+            </header>
 
-        <header id="modal_header">
-            <a href="#" class="modal_btn">
-                <i class="fas fa-slash"></i>
-                <i class="fas fa-slash"></i>
-            </a>
-            <div id="modal_header_wraper">
-                <figure id="modal_img"></figure>
-                <div id="modal_titles">
+            <div class="modal_data_wraper">
 
+                <div id="modal_data">
+                    
                 </div>
             </div>
-        </header>
-        <div class="modal_data">
-
         </div>
     </section>
 </body>
