@@ -107,3 +107,10 @@ const categoriesHandler = category => {
 
     moviesFetch(category)
 }
+
+const reloadPage = () => {
+    event.preventDefault()
+    document.getElementById('banner_wrapper').classList.remove('hidden')
+    document.getElementById('categories_wrapper').classList.remove('hidden')
+    document.getElementById('movies_wrapper').classList.add('hidden')
+}
