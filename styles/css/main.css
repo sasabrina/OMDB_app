@@ -466,17 +466,30 @@ template {
 #container main {
   width: calc(100% - 95px);
 }
-#container main .movies_wrapper .category_wrap .movies_container {
+#container main #categories_wrapper .movies_container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
   list-style: none;
 }
-#container main .movies_wrapper .category_wrap .movies_container .movie_box {
+#container main #categories_wrapper .movies_container .movie_box {
   width: 20%;
 }
-#container main .movies_wrapper .category_wrap .movies_container .movie_box img {
+#container main #categories_wrapper .movies_container .movie_box img {
+  width: 100%;
+}
+#container main #movies_wrapper .movies_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+}
+#container main #movies_wrapper .movies_container .movie_box {
+  width: 20%;
+}
+#container main #movies_wrapper .movies_container .movie_box img {
   width: 100%;
 }
 #container svg.small_icon {
@@ -558,7 +571,7 @@ header .main_header input {
   font-weight: 300;
   font-size: 16px;
 }
-header .banner {
+header #banner {
   width: 100%;
   height: 384px;
   display: flex;
@@ -570,7 +583,7 @@ header .banner {
   position: relative;
   background-image: url(../../assets/batman.jpg);
 }
-header .banner:before {
+header #banner:before {
   content: "";
   position: absolute;
   top: 0;
@@ -579,10 +592,10 @@ header .banner:before {
   height: 100%;
   background: rgba(247, 247, 247, 0.7);
 }
-header .banner .title_wrap {
+header #banner .title_wrap {
   position: relative;
 }
-header .banner .title_wrap h1 {
+header #banner .title_wrap h1 {
   font-weight: 500;
   font-size: 22px;
   text-transform: uppercase;

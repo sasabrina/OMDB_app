@@ -9,8 +9,12 @@
     main {
         width: calc(100% - 95px);
 
-        .movies_wrapper{
-            @import './category_wrap';
+        #categories_wrapper{
+            @import './movie_container';
+        }
+
+        #movies_wrapper{
+            @import './movie_container';
         }
     }
 
